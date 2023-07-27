@@ -1,0 +1,258 @@
+  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Encode+Sans+Expanded&family=Montserrat+Alternates&display=swap');
+
+
+:root{
+  --main-color : #0aad0a;
+  --light-color :#f0f3f2;
+  --font-family :'Encode Sans Expanded', sans-serif;
+  --rating-color : #ffc908;
+
+  
+}
+
+.navbar{
+  position: fixed !important;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: var(--font-family) !important;
+
+}
+.rating-color {
+  color: var(--rating-color);
+}
+.cartEmpty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://assets.materialup.com/uploads/66fb8bdf-29db-40a2-996b-60f3192ea7f0/preview.png);
+  
+
+}
+.iconOfThank{
+  font-size: 150px;
+}
+.thank-you{
+  height: 100vh;
+}
+.img-width{
+  width: 40%;
+}
+
+.header-wishlist{
+margin-top: 100px;
+}
+.heart{
+  position: absolute;
+  right: 2px;
+  top: 5px;
+}
+.img-payment{
+  width: 10%;
+}
+.btn-remove{
+  position: absolute;
+  bottom: 10px;
+  z-index: 1000;
+
+}
+.categories{
+ margin-top: 80px;
+  
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.box-shadow{
+  box-shadow: 10px 10px 5px 0px rgba(0,191,60,1);
+
+}
+.category:hover{
+  transform: scale(1.02);
+  transition:transform 0.2s
+}
+.category{
+  transition:transform 0.2s
+
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+
+}
+
+a:active {
+  text-decoration: underline;
+  color: black;
+
+}
+.myButton {
+	background-color:#44c767;
+	border-radius:12px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.btn-wishlist-add{
+  position: absolute;
+  top: 30px;
+  z-index: 2;
+}
+.btn-wishlist-remove{
+  position: absolute;
+  bottom: 30px;
+
+  z-index: 2;
+}
+a , a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.product .btn{
+  transform: translateY(80%);
+  transition: transform 0.5s ,opacity 0.5s;
+  opacity: 0;
+}
+.product:hover .btn {
+  opacity: 1;
+  transform: translateY(-20%);
+
+}
+Link{
+  text-decoration: none;
+}
+.img{
+  border-radius: 10px;
+  box-shadow: 10px 10px 14px -12px rgba(37,158,113,1);
+  transition: transform 0.3s;
+
+
+}
+.img:hover{
+ transform: scale(1.1);
+ transition: transform 0.3s;
+}
+
+.font-sm{
+  font-size: 14px;
+}
+.text-main{
+  color: var(--main-color);
+}
+.bg-main{
+  background-color: var(--main-color) !important;
+}
+.bg-main-light{
+  background-color: var(--light-color);;
+}
+.img-width-cart{
+  width: 83%;
+  
+}
+@media screen and (max-width: 720) {
+.sliderOfCategory{
+  height: 180px;
+}
+
+
+}
+@media screen and (max-width: 760px) {
+  .img-width{
+    width: 100%;
+  }
+  .img-width-cart{
+    width:  100%;
+  }
+  
+  
+  }
+
+
+
+
+.containerOFLoading{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid var(--main-color);
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+.itemOfCart{
+  background-color:var(--light-color) ;
+}
+table.customTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #F8F8F8;
+  border-style: solid;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 2px;
+  border-color: #F8F8F8;
+  border-style: solid;
+  padding: 5px;
+}
+
+table.customTable thead {
+  background-color: var(--light-color);
+  
+}
