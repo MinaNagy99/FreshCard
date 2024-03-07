@@ -8,6 +8,7 @@ export default function CategoryContextProvider({children}) {
 
     async function getCategories() {
         let {data} = await axios.get(`${baseUrl}/categories`)
+        console.log(data);
     setcategoryies(data.data)
     setisLoading(false)   
 }
