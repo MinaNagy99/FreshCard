@@ -29,7 +29,7 @@ import CartEmpty from './Component/CartEmpty/CartEmpty.jsx'
 export default function App() {
   let routes = createBrowserRouter([{ path:'/',element:<MainLayout/>,
     children:[{index:true,element: <HomePage/>},
-    {path:'/E-Commerce',element: <HomePage/>},
+    {path:'/FreshCard',element: <HomePage/>},
     {path:'/products',element:<Products/>},
     {path:'/product-details/:id',element:<ProductDetails/>},
     { path:'/register',element:<Register/>},
