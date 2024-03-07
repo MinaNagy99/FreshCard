@@ -12,7 +12,6 @@
 //         },{
 //             headers:{token}
 //         })
-//         console.log(value,id);
 //     }
 //   return <orderContext.Provider value={{createCashOrder}}>
 // {children}

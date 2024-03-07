@@ -22,7 +22,6 @@ export default function Login() {
         onSubmit: async values => {
             setisLoading(true)
                await axios.post(`${baseUrl}/auth/signin`,values).then((data)=>{
-                console.log(data.data.token);
                 localStorage.setItem('token',data.data.token)
                 setisLoading(false)
                 navigate('/')
