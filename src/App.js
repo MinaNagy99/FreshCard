@@ -22,7 +22,6 @@ import WishList from './Component/WishList/WishList.jsx'
 import WishListProvider from './Context/WishListContext.jsx'
 import AddressContextProvider from './Context/AddressContext.jsx'
 import AddAddress from './Component/AddAddress/AddAddress.jsx'
-import OrderContextProvider from './Context/OrderContext.jsx'
 import ThankYouForOrder from './Component/ThankYouForOrder/ThankYouForOrder.jsx'
 import CartEmpty from './Component/CartEmpty/CartEmpty.jsx'
 

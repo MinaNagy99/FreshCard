@@ -10,7 +10,7 @@ export default function Login() {
     const [isLoading, setisLoading] = useState(false)
     let validationSchema = yup.object({
         email:yup.string().email().required(),
-        password:yup.string().matches(/^(?=.*[A-Za-z])[A-Za-z\d]{6,}$/,'at least 6 charchter and start with upperCase').required(),
+        password:yup.string().matches(/.{6,}$/,'Password no valid').required(),
 
     }) 
     const LoginFormik = useFormik({

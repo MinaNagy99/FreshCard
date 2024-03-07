@@ -14,14 +14,14 @@ export default function CartContextProvider({ children }) {
 
   function getTotalPrice(cart) {
     let arr = [];
-    cart.map((elm) => {
+   return cart.map((elm) => {
       arr.push(elm.count * elm.price);
 
       settotalPrice(arr.reduce((total, item) => total + item));
     });
   }
   function removeAll(cart) {
-    cart.map((elm) => {
+  return  cart.map((elm) => {
       removeFromCart(elm.product._id);
     });
   }
@@ -41,16 +41,22 @@ export default function CartContextProvider({ children }) {
     }
   }
   async function addToCart(id) {
-    notify("prodect added", "success");
-    await axios.post(
-      `${baseUrl}/cart`,
-      { productId: `${id}` },
-      {
-        headers: { token }
-      }
-    );
-    getCart();
-  }
+    notify("Product added", "success");
+    try {
+        await axios.post(
+            `${baseUrl}/cart`,
+            { productId: id },
+            {
+                headers: { token }
+            }
+        );
+        getCart();
+    } catch (error) {
+        console.error("Error adding product to cart:", error);
+        notify("Failed to add product to cart", "error");
+    }
+}
+
 
   async function removeFromCart(id) {
     notify("remove product from cart", "error");

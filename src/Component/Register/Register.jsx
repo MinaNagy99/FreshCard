@@ -11,7 +11,7 @@ export default function Register() {
     let validationSchema = yup.object({
         name:yup.string().min(3).required(),
         email:yup.string().email().required(),
-        password:yup.string().matches(/^(?=.*[A-Za-z])[A-Za-z\d]{6,}$/,'at least 6 charchter and start with upperCase').required(),
+        password:yup.string().matches(/.{6,}$/,'Password no valid').required(),
         rePassword:yup.string().oneOf([yup.ref('password')],'not match the password').required()
 
     }) 
