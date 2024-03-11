@@ -1,14 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { baseUrl } from '../../Utilits/BaseUrl.js'
-import axios from 'axios'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { cartContext } from '../../Context/CartContect.jsx'
-import { notify } from '../../Utilits/Alert.jsx'
-import Loading from '../Loading/Loading.jsx'
 import CartEmpty from '../CartEmpty/CartEmpty.jsx'
 
 export default function Cart() {
-    let {cart,totalPrice,removeAll,isEmpty,getCart,removeFromCart,increaseCount,decreaseCount}=useContext(cartContext)
+    let {cart,totalPrice,removeAll,isEmpty,getCart,increaseCount,decreaseCount}=useContext(cartContext)
     useEffect(() => {
   getCart()
     }, [])

@@ -19,7 +19,7 @@ export default function Product({ products }) {
             products.map((elm) => (
               <div key={elm._id} className="col-md-2  col-4">
                 <div className="product position-relative fs-5 text-muted">
-                  {!idOfWishList.find((item) => item == elm._id) ? (
+                  {!idOfWishList.find((item) => item === elm._id) ? (
                     <i
                       onClick={() =>
                         

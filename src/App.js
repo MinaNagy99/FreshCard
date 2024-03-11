@@ -1,13 +1,6 @@
 import React from "react";
-import Navbar from "./Component/Navbar/Navbar.jsx";
-import MainSlider from "./Component/MainSlider/MainSlider.jsx";
-import CategoriesSlider from "./Component/CategoriesSlider/CategoriesSlider.jsx";
 import Products from "./Component/Products/Products.jsx";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  createHashRouter
-} from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import MainLayout from "./MainLayout/MainLayout.jsx";
 import HomePage from "./Component/HomePage/HomePage.jsx";
 import ProductDetails from "./Component/ProductDetails/ProductDetails.jsx";
@@ -41,14 +34,28 @@ export default function App() {
         { path: "/product-details/:id", element: <ProductDetails /> },
         { path: "/register", element: <Register /> },
         { path: "/login", element: <Login /> },
-        { path: "/cart", element: <Cart /> },
+        {
+          path: "/cart",
+          element: (
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          )
+        },
         { path: "/category", element: <Category /> },
         { path: "/category/:id", element: <SpesificCategory /> },
         { path: "/brands", element: <Brands /> },
         { path: "/address", element: <Address /> },
         { path: "/addaddress", element: <AddAddress /> },
 
-        { path: "/wishlist", element: <WishList /> },
+        {
+          path: "/wishlist",
+          element: (
+            <ProtectedRoute>
+              <WishList />
+            </ProtectedRoute>
+          )
+        },
         { path: "/cartEmpty", element: <CartEmpty /> },
 
         { path: "/thankYou", element: <ThankYouForOrder /> }

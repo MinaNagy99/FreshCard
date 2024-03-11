@@ -1,16 +1,11 @@
-import axios from 'axios'
 import { useFormik } from 'formik'
 import React, { useContext, useState } from 'react'
 import * as yup from 'yup'
-import { baseUrl } from '../../Utilits/BaseUrl.js'
 import { useNavigate } from 'react-router-dom'
-import { hasFormSubmit } from '@testing-library/user-event/dist/utils/index.js'
 import { addressContext } from '../../Context/AddressContext.jsx'
 export default function   AddAddress() {
   const [isLoading, setisLoading] = useState(false)
-  const [errorFromDataBase, seterrorFromDataBase] = useState('')
-  let{getAddress,addAddress} =useContext(addressContext)
-  let token = localStorage.getItem('token')
+  let{addAddress} =useContext(addressContext)
   let navigate = useNavigate()
 
 let validationSchema = yup.object({

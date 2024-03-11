@@ -3,8 +3,6 @@ import AddAddress from '../AddAddress/AddAddress.jsx'
 import PaymentMethod from '../PaymentMethod/PaymentMethod.jsx'
 import { addressContext } from '../../Context/AddressContext.jsx'
 import { Link } from 'react-router-dom'
-import { orderContext } from '../../Context/OrderContext.jsx'
-import { cartContext } from '../../Context/CartContect.jsx'
 
 export default function Address() {
   let {addresses,removeAddress,isExistAddress} = useContext(addressContext)
@@ -12,7 +10,7 @@ export default function Address() {
 
 
   function confirmAddress(id) {
-    const addressIsConfirm= addresses.filter((elm)=>elm._id==id)
+    const addressIsConfirm= addresses.filter((elm)=>elm._id===id)
     setaddressIsConfirm(addressIsConfirm[0])
 
     }
@@ -51,7 +49,7 @@ export default function Address() {
 
     
       <button onClick= {()=>{removeAddress(elm._id)}} className='btn btn-danger me-3'>remove</button>
-      {addressIsConfirm&&addressIsConfirm._id==elm._id?
+      {addressIsConfirm&&addressIsConfirm._id===elm._id?
       <i className="fa-sharp fs-2 text-success ms-4 fa-solid fa-circle-check"></i>:
       <button  onClick={()=>confirmAddress(elm._id)}  className='btn btn-success'>confirm</button>
 

@@ -1,8 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { categoryContext } from '../../Context/CategoryContext.jsx'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { baseUrl } from '../../Utilits/BaseUrl.js'
-import { Link } from 'react-router-dom'
 import Loading from '../Loading/Loading.jsx'
 
 export default function Brands() {

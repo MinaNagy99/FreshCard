@@ -52,7 +52,7 @@ const [isLoading, setisLoading] = useState(true)
       <div className="col-md-8  pt-5">
         <div className="d-flex  justify-content-between align-items-center">
         <h3 className='py-3'>{product.title}</h3>
-        {!idOfWishList.find((item)=>item==product._id)?
+        {!idOfWishList.find((item)=>item===product._id)?
               <i onClick={()=>addToWishList(product._id)} className=" fs-2 pe-5  text-muted  fa-regular   fa-heart"></i>
               :
               <i onClick={()=>removeFromWishList(product._id)} className="fs-2 pe-5    text-danger fa-solid   fa-heart"></i>

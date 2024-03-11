@@ -1,15 +1,11 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { notify } from '../../Utilits/Alert.jsx';
-import axios from 'axios';
-import { baseUrl } from '../../Utilits/BaseUrl.js';
 import { cartContext } from '../../Context/CartContect.jsx';
 
 export default function PaymentMethod({addressIsConfirm}) {
   let navigator = useNavigate()
   let {removeAll,cart} =useContext(cartContext)
-  let token = localStorage.getItem('token')
   async function order() {
     if (addressIsConfirm) {
       removeAll(cart)

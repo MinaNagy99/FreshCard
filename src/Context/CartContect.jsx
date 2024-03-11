@@ -35,7 +35,7 @@ export default function CartContextProvider({ children }) {
       setcartId(data.data._id);
       setcartCount(data.data.products.length);
       getTotalPrice(data.data.products);
-      if (data.data.products.length == 0) {
+      if (data.data.products.length === 0) {
         setisEmpty(false);
       }
     }
@@ -80,7 +80,7 @@ export default function CartContextProvider({ children }) {
   }
 
   async function decreaseCount(id, currentlyCount) {
-    if (currentlyCount == 1) {
+    if (currentlyCount === 1) {
       removeFromCart(id);
     } else {
       await axios.put(

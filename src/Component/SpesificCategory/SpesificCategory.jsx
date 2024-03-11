@@ -8,11 +8,10 @@ import Product from '../Product/Product.jsx'
 export default function SpesificCategory() {
     let {id}=useParams()
     const [products, setproducts] = useState([])
-    const [productsOfCategory, setproductsOfCategory] = useState([])
     const [isLoading, setisLoading] = useState(true)
     async function getAllProducts() {
         let{data}= await axios.get(`${baseUrl}/products`)
-       let myProduct =   data.data.filter((elm)=>elm.category._id==id)
+       let myProduct =   data.data.filter((elm)=>elm.category._id===id)
         setproducts(myProduct)
         setisLoading(false)
     }
