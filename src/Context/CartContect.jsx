@@ -5,7 +5,7 @@ import { notify } from "../Utilits/Alert.jsx";
 export let cartContext = createContext("");
 
 export default function CartContextProvider({ children }) {
-  let token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   const [cart, setcart] = useState("");
   const [cartId, setcartId] = useState("");
   const [cartCount, setcartCount] = useState(0);
@@ -14,19 +14,19 @@ export default function CartContextProvider({ children }) {
 
   function getTotalPrice(cart) {
     let arr = [];
-   return cart.map((elm) => {
+    return cart.map((elm) => {
       arr.push(elm.count * elm.price);
 
       settotalPrice(arr.reduce((total, item) => total + item));
     });
   }
   function removeAll(cart) {
-  return  cart.map((elm) => {
+    return cart.map((elm) => {
       removeFromCart(elm.product._id);
     });
   }
   async function getCart() {
-    if (localStorage.getItem("token")) {
+    if (token) {
       setisEmpty(true);
       let { data } = await axios.get(`${baseUrl}/cart`, {
         headers: { token }
@@ -41,22 +41,21 @@ export default function CartContextProvider({ children }) {
     }
   }
   async function addToCart(id) {
-    notify("Product added", "success");
     try {
-        await axios.post(
-            `${baseUrl}/cart`,
-            { productId: id },
-            {
-                headers: { token }
-            }
-        );
-        getCart();
+      await axios.post(
+        `${baseUrl}/cart`,
+        { productId: id },
+        {
+          headers: { token }
+        }
+      );
+      notify("Product added", "success");
+      getCart();
     } catch (error) {
-        console.error("Error adding product to cart:", error);
-        notify("Failed to add product to cart", "error");
+      console.error("Error adding product to cart:", error);
+      notify("Failed to add product to cart", "error");
     }
-}
-
+  }
 
   async function removeFromCart(id) {
     notify("remove product from cart", "error");
