@@ -91,7 +91,9 @@ export default function ProductDetails() {
               </div>
               <button
                 onClick={() => {
-                  addToCart(product._id);
+                  localStorage.getItem("token")
+                    ? addToCart(product._id)
+                    : navigator("/login");
                 }}
                 className="w-100 text-white bg-success btn mb-5 fs-5"
               >
